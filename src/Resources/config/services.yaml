@@ -1,0 +1,10 @@
+services:
+  #FORM FORGE BUNDLE
+  test.hello.manager:
+    class: HelloTestBundle\Services\HelloTestManager
+    public: true
+    autowire: false
+    arguments:
+      $em: '@doctrine.orm.entity_manager'
+      $message: 'Hello Nas :p'
+#  test.hello.manager: ''

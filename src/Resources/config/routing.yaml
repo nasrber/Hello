@@ -1,0 +1,7 @@
+default:
+  path: /
+  controller: HelloTestBundle\Controller\HelloTestController::helloTestAction
+
+add_message:
+  path: /add
+  controller: HelloTestBundle\Controller\HelloTestController::addMessageAction
