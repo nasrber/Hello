@@ -1,0 +1,27 @@
+{
+  "name": "net15/hello_bundle",
+  "type": "symfony-bundle",
+  "description": "Test bundle for vendor",
+  "license": "MIT",
+  "authors": [],
+  "require": {},
+  "require-dev": {},
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "HelloTestBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "HelloTestBundle\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.0.x-dev"
+    }
+  }
+}
