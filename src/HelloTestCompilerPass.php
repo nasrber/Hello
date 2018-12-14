@@ -14,6 +14,9 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class HelloTestCompilerPass implements CompilerPassInterface
 {
+    /**
+     * @param ContainerBuilder $container
+     */
     public function process(ContainerBuilder $container)
     {
         // TODO: Implement process() method.
