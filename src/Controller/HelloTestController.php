@@ -31,10 +31,9 @@ class HelloTestController extends AbstractController
     }
 
     public function addMessageAction(){
-        $message = $this->container->get('test.hello.manager')->addMessage('Salut', 'Nino');
+        $message = $this->container->get('test.hello.manager')->addMessage('Charge de dire, de transmettre', 'Nas');
 
-        dump($message);
-        die();
+        return $this->render('@HelloTest/message_view.html.twig', ['message' => $message]);
     }
 
 
