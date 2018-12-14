@@ -1,10 +1,22 @@
 services:
-  #FORM FORGE BUNDLE
-  HelloTestBundle\Services\HelloTestManager:
-    public: false
+  #Méthode 1
+  test.hello.manager:
+    class: HelloTestBundle\Services\HelloTestManager
+    public: true
+    autowire: false
     arguments: ['@doctrine.orm.entity_manager', 'Hello Nas :p']
 
-    test.hello.manager:
-      alias: HelloTestBundle\Services\HelloTestManager
-      public: true
-#  test.hello.manager: ''
+    #Methode 2
+    #    arguments:
+    #      $em: '@doctrine.orm.entity_manager'
+    #      $message: 'Hello Nas :p'
+
+
+    #Methode 3
+#  HelloTestBundle\Services\HelloTestManager:
+#    public: false
+#    arguments: ['@doctrine.orm.entity_manager', 'Hello Nas :p']
+#
+#  test.hello.manager:
+#    alias: HelloTestBundle\Services\HelloTestManager
+#    public: true

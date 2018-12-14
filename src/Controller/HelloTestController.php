@@ -19,23 +19,14 @@ use Psr\Container\ContainerInterface;
 
 class HelloTestController extends AbstractController
 {
-//    public static function getSubscribedServices(): array
-//    {
-//        return parent::getSubscribedServices() + [
-//                'test.hello.manager'=> HelloTestManager::class
-//            ];
-//    }
-
-    public function helloTestAction(ContainerInterface $container){
-        $message = $container->get('test.hello.manager')->sendMessage();
-        return new Response($message);
+    public function helloTestAction(){
+        return new Response($this->container->get('test.hello.manager')->sendMessage());
     }
 
-    public function addMessageAction(ContainerInterface $container){
-        $message = $container->get('test.hello.manager')->addMessage('Charge de dire, de transmettre', 'Nas');
+    public function addMessageAction(){
+        $message =  $this->container->get('test.hello.manager')->addMessage('Salut tou le monde', 'Nas');
 
         return $this->render('@HelloTest/message_view.html.twig', ['message' => $message]);
     }
-
 
 }
